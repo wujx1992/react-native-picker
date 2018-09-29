@@ -91,33 +91,31 @@ class DatePicker extends BaseDialog {
             years.indexOf(selectedYear + unit[0]) == -1 ? years.length - 1 : years.indexOf(selectedYear + unit[0]),
             months.indexOf(selectedMonth + unit[1]),
             days.indexOf(selectedDay + unit[2]) == -1 ? days.length - 1 : days.indexOf(selectedDay + unit[2])];
-        this.props.selectedValue[0] = years[selectedIndex[0]];
-        this.props.selectedValue[1] = months[selectedIndex[1]];
-        this.props.selectedValue[2] = days[selectedIndex[2]];
+
         if (this.props.HH) {
             let hours = [];
             for (let i = 0; i < 24; i++) {
-                hours.push((i + 1) + '时');
+                hours.push((i + 0) + '时');
             }
             pickerData.push(hours);
             if (this.props.selectedValue) {
-                selectedIndex.push((this.props.selectedValue[3] ? parseInt(this.props.selectedValue[3]) : new Date().getHours()) - 1);
+                selectedIndex.push((this.props.selectedValue[3] ? parseInt(this.props.selectedValue[3]) : new Date().getHours()) - 0);
             } else {
-                selectedIndex.push((new Date().getHours() - 1));
+                selectedIndex.push((new Date().getHours() - 0));
             }
-            this.props.selectedValue[3] = (selectedIndex[3] + 1) + '时';
+            this.props.selectedValue[3] = (selectedIndex[3] + 0) + '时';
             if (this.props.mm) {
                 let minutes = [];
                 for (let i = 0; i < 60; i++) {
-                    minutes.push((i + 1) + '分');
+                    minutes.push((i + 0) + '分');
                 }
                 pickerData.push(minutes);
                 if (this.props.selectedValue) {
-                    selectedIndex.push((this.props.selectedValue[4] ? parseInt(this.props.selectedValue[4]) : new Date().getMinutes()) - 1);
+                    selectedIndex.push((this.props.selectedValue[4] ? parseInt(this.props.selectedValue[4]) : new Date().getMinutes()) - 0);
                 } else {
-                    selectedIndex.push((new Date().getMinutes() - 1));
+                    selectedIndex.push((new Date().getMinutes() - 0));
                 }
-                this.props.selectedValue[4] = (selectedIndex[4] + 1) + '分';
+                this.props.selectedValue[4] = (selectedIndex[4] + 0) + '分';
                 if (this.props.ss) {
                     let seconds = [];
                     for (let i = 0; i < 60; i++) {
