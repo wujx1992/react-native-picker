@@ -221,7 +221,7 @@ class PickerView extends BaseComponent {
                     item.setValue(0);
                 }
             })
-            this.props.onPickerSelected && this.props.onPickerSelected(this.state.list[selectedIndex]);
+            this.props.onPickerSelected && this.props.onPickerSelected(this.state.list[selectedIndex],selectedIndex - 2);
         }, 20));
     }
 
